@@ -1,0 +1,66 @@
+<div class="outer">
+    <div class="container ">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4  offset-md-3">
+                <div class="panel border bg-white">
+                    <div class="panel-heading">
+                        <h3 class="pt-1 font-weight-bold">Sign Up Form</h3>
+                        </div>
+                        <div class="panel-body pt-3">
+                            <form [formGroup]= "signUpForm">
+                                <div class="form-group pt-3 p-3 ">
+                                    <div class="input-field" >
+                                        <span class="fa fa-user  p-2"></span>
+                                    <input formControlName="firstname" type="text" placeholder=" Enter First Name">
+                            
+                                    </div>
+                                </div>
+                                <small *ngIf="signUpForm.controls['firstname'].dirty&&signUpForm.hasError('required','firstname')" class="text-danger m-4" >FirstName is Required</small>
+                        
+                                <div class="form-group pt-3 p-3">
+                                    <div class="input-field" >
+                                        <span class="fa fa-user p-2"></span>
+                                        <input formControlName="lastname" type="text" placeholder=" Enter Last Name">
+                                    </div>
+                                </div>
+                                <small *ngIf="signUpForm.controls['lastname'].dirty&&signUpForm.hasError('required','lastname')" class="text-danger m-4">LastName is Required</small>
+                        
+                                <div class="form-group pt-3 p-3">
+                                    <div class="input-field" >
+                                        <span class="fa fa-user p-2"></span>
+                                        <input formControlName="email"  type="text" placeholder=" Enter Email">
+                                    </div>
+                                </div>
+                                <small *ngIf="signUpForm.controls['email'].dirty&&signUpForm.hasError('required','email')" class="text-danger m-4">Email is Required</small>
+                        
+                                <div class="form-group pt-3 p-3">
+                                    <div class="input-field" >
+                                        <span class="fa fa-user p-2"></span>
+                                        <input formControlName="username" type="text" placeholder=" Enter Name">
+                                    </div>
+                                </div>
+                                <small *ngIf="signUpForm.controls['username'].dirty&&signUpForm.hasError('required','username')" class="text-danger m-4 ">UserName is Required</small>
+                        
+                                <div class="form-group pt-3 p-3">
+                                    <div class="input-field" >
+                                        <span class="fa fa-lock p-2"></span>
+                                        <input formControlName="password" [type]="type" placeholder=" Enter Password">
+                                        <span (click)="hideShowPass()" class="fa fa-eye-slash"></span>
+                                    </div>
+                                </div>
+                                <small *ngIf="signUpForm.controls['password'].dirty&&signUpForm.hasError('required','password')" class="text-danger m-4">Password is Required</small>
+                        
+                    
+    
+                                
+                                <button type="submit" class="btn btn-primary btn-block mt-4 w-50" (click)="onSignup()">Sign up</button>
+                                <div class="text-center pt-4 text-muted">Already have account?<a id="forget" routerLink="/login">Login</a></div>    
+                            </form>
+    </div>
+    <!-- <div class="mx-3 my-3 py-2 bordert">
+        <div class="text-center py-3">
+            <a href="https://www.facebook.com"target="_blank" class="px-2"><img src="https://www.dpreview.com/files/p/articles/4698742202/facebook.jpeg" alt="facebook"></a>
+            <a href="https://www.google.com"target="_blank" class="px-2"><img src="https://www.svgrepo.com/show/355037/google.svg"alt="google"></a>
+            <a href="https://www.twitter.com"target="_blank" class="px-2"><img src="https://www.svgrepo.com/show/126780/twitter.svg" alt="twitter"></a>
+
+</div> -->
